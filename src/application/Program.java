@@ -3,11 +3,11 @@ package application;
 import java.util.Scanner;
 
 import entity.Graph;
+import entity.Population;
 
 public class Program {
 
     public static void main(String[] args) {
-	// TODO Auto-generated method stub
 	
 	Scanner sc = new Scanner(System.in);
 	
@@ -16,11 +16,13 @@ public class Program {
 	int[][]mat = new int[k][k];
 	
 	Graph grp = new Graph(k, mat);
-	
 	grp.starMat();
-	grp.printMat();
+	//grp.printMat();
 
-	
+	Population population = new Population();
+	population.setK(k, mat);
+	population.startPopulation();
+	population.printPopulation();
 	sc.close();
 	
 	}

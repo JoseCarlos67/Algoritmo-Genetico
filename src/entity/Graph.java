@@ -8,11 +8,10 @@ public class Graph {
     Scanner sc = new Scanner(System.in);
     Random rand = new Random();
     
-    int k;
-    int[][] matGraph = new int[k][k];
+    private int k;
+    private int[][] matGraph = new int[k][k];
      
     public Graph(int k, int[][] mat) {
-	super();
 	this.k = k;
 	this.matGraph = mat;
     }
