@@ -14,15 +14,19 @@ public class Program {
 	System.out.println("Informe o valor de K: ");
 	int k = sc.nextInt();
 	int[][]mat = new int[k][k];
+	int[] aux = new int[k];
 	
 	Graph grp = new Graph(k, mat);
 	grp.starMat();
 	//grp.printMat();
 
 	Population population = new Population();
-	population.setK(k, mat);
-	population.startPopulation();
+	population.setK(k, mat, aux);
+	population.zera();
+	//population.startPopulation();
 	population.printPopulation();
+	System.out.println();
+
 	sc.close();
 	
 	}

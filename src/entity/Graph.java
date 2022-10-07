@@ -17,21 +17,21 @@ public class Graph {
     }
 
     public void starMat() {
-	for (int i = 0; i < k; i++) {
-	    for (int j = i+1; j < k; j++) {
-		this.matGraph[i][j] = rand.nextInt(10);
-		this.matGraph[j][i] = this.matGraph[i][j];
-	    }
-	}
+		for (int i = 0; i < k; i++) {
+		    for (int j = i+1; j < k; j++) {
+		    	this.matGraph[i][j] = rand.nextInt(10);
+		    	this.matGraph[j][i] = this.matGraph[i][j];
+		    }
+		}
     }
     
     public void printMat() {
-	for (int i = 0; i < k; i++) {
-	    for (int j = 0; j < k; j++) {
-		System.out.print(matGraph[i][j] + " ");
-	    }
-	    System.out.println();
-	}
+		for (int i = 0; i < k; i++) {
+		    	for (int j = 0; j < k; j++) {
+		    		System.out.print(matGraph[i][j] + " ");
+		    }
+		    	System.out.println();
+		}
     }
     
     
