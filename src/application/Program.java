@@ -22,8 +22,8 @@ public class Program {
 
 	Population population = new Population();
 	population.setK(k, mat, aux);
-	population.zera();
-	//population.startPopulation();
+	population.resetMatc();
+	population.startPopulation();
 	population.printPopulation();
 	System.out.println();
 
