@@ -18,14 +18,17 @@ public class Program {
 	
 	Graph grp = new Graph(k, mat);
 	grp.starMat();
-	//grp.printMat();
-
+	grp.printMat();
+	
+	System.out.println();
+	
 	Population population = new Population();
 	population.setK(k, mat, aux);
 	population.resetMatc();
 	population.startPopulation();
 	population.printPopulation();
 	System.out.println();
+	population.fitness();
 
 	sc.close();
 	

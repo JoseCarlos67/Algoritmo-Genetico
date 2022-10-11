@@ -9,18 +9,22 @@ public class Graph {
     Random rand = new Random();
     
     private int k;
-    private int[][] matGraph = new int[k][k];
-     
+    int[][] matGraph = new int[k][k];
+    
+    public Graph() {
+    	
+    }
+    
     public Graph(int k, int[][] mat) {
-	this.k = k;
-	this.matGraph = mat;
+    	this.k = k;
+    	this.matGraph = mat;
     }
 
     public void starMat() {
 		for (int i = 0; i < k; i++) {
 		    for (int j = i+1; j < k; j++) {
 		    	this.matGraph[i][j] = rand.nextInt(10);
-		    	this.matGraph[j][i] = this.matGraph[i][j];
+		    	//this.matGraph[j][i] = this.matGraph[i][j];
 		    }
 		}
     }

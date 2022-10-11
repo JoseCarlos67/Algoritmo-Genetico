@@ -7,6 +7,8 @@ public class Population {
     private int k, ind = 3;
     private int[][] population = new int[ind][k];
     private int[] aux = new int[k];
+    private int[][] matGrafo = new int[k][k];
+    Graph gph = new Graph(k, matGrafo);
     
     Random rand = new Random();
 
@@ -33,21 +35,31 @@ public class Population {
 	    aux[first] = 1;
 	    
 	    for (int j = 1; j < k; j++) {
-		int value = rand.nextInt(k);
+	    	int value = rand.nextInt(k);
 		
-		while (aux[value] == 1) {
-		    value = rand.nextInt(k);
-		}  
-		population[i][j] = value;
-		aux[value] = 1;    
-	    }	
-	}    
+	    	while (aux[value] == 1) {
+	    		value = rand.nextInt(k);
+	    	}  
+	    	population[i][j] = value;
+	    	aux[value] = 1;    
+	    	}	
+		}    
+    }
+    
+    public void fitness() {
+    	int i = 0, j = 0, soma = 0;
+    	i = population[0][0];
+    	System.out.println(i);
+    	j = population[0][1];
+    	System.out.println(j);
+    	soma = gph.matGraph[i][j];
+    	System.out.println(soma);
     }
     
     public void printPopulation() {
     	for (int i = 0; i < ind; i++) {
     	    for (int j = 0; j < k; j++) {
-    		System.out.print(population[i][j] + " ");
+    	    	System.out.print(population[i][j] + " ");
     	    }
     	    System.out.println();
     	}
@@ -55,9 +67,9 @@ public class Population {
     
     //Função que zera meu vetor auxiliar.
     private static void reset(int[] mat, int k) {
-	for (int i = 0; i < k; i++) {
-	    mat[i] = 0;	    
-	}
+    	for (int i = 0; i < k; i++) {
+    		mat[i] = 0;	    
+		}
     }
     
 }
